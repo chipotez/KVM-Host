@@ -1,7 +1,7 @@
 **Preparando Host.**
 
 1.- Actualizar S.O.
-  
+
     [root@gold72 ~]# yum update -y
       Complementos cargados:product-id, search-disabled-repos, subscription-manager
       rhel-7-server-extras-rpms                                                    | 3.2 kB  00:00:00
@@ -20,11 +20,13 @@
   
   2.- Instalaremos el software necesario para proporcionar un entorno  que permita alojar equipos virtualizados:
   
-      [root@gold72 ~]# yum install qemu-kvm qemu-img libvirt -y
-      Complementos cargados:product-id, search-disabled-repos, subscription-manager
-      Resolviendo dependencias
-      --> Ejecutando prueba de transacción
-      (....)
+  2.1 .- Método 1 Instalación por paquetes.
+  
+        [root@gold72 ~]# yum install qemu-kvm qemu-img libvirt -y
+            Complementos cargados:product-id, search-disabled-repos, subscription-manager
+            Resolviendo dependencias
+            --> Ejecutando prueba de transacción
+            (....)
       
       Instalado:
         libvirt.x86_64 0:1.2.17-13.el7_2.5  qemu-img.x86_64 10:1.5.3-105.el7_2.7  
@@ -34,7 +36,7 @@
       
       ¡Listo!
   
-  3.- Instalaremo utilidades adicionales necesarias para configurar libvirt e instalar máquinas virtuales:
+  2.1.1 .- Instalaremo utilidades adicionales necesarias para configurar libvirt e instalar máquinas virtuales:
   
       [root@gold72 /]# yum install virt-install libvirt-python python-virthost libvirt-client
     Complementos cargados:product-id, search-disabled-repos, subscription-manager
@@ -67,8 +69,15 @@
     
     ¡Listo!
 
+  2.2 .- Instalación por grupos de paquetes.
   
-  4.- Por defecto, este demonio se marca el inicio automático en cada arranque. Compruebe con el siguiente comando:
+      [root@gold72 ~]# yum install @virtualization-hypervisor @virtualization-client @virtualization-platform  @virtualization-tools -y
+          Complementos cargados:product-id, search-disabled-repos, subscription-manager
+          Advertencia: Grupo virtualization-hypervisor no tiene ningún paquete que instalar.
+          Resolviendo dependencias
+          --> Ejecutando prueba de transacción
+
+  3.- Por defecto, este demonio se marca el inicio automático en cada arranque. Compruebe con el siguiente comando:
 
     [root@gold72 /]# systemctl status libvirtd
       ● libvirtd.service - Virtualization daemon
