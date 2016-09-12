@@ -122,11 +122,11 @@
     Hint: Some lines were ellipsized, use -l to show in full.
 
 
-5.- Si por alguna razón esto funciona, lo configuraremos para el inicio automático ejecutando el siguiente comando:
+4.- Si por alguna razón esto funciona, lo configuraremos para el inicio automático ejecutando el siguiente comando:
 
     [root@gold72 /]# systemctl enable libvirtd
     
-6.- Para detener/iniciar/reiniciar este demonio, esto es lo que necesita ejecutar:
+5.- Para detener/iniciar/reiniciar este demonio, esto es lo que necesita ejecutar:
 
     [root@gold72 /]# systemctl stop libvirtd
     [root@gold72 /]# systemctl start libvirtd
