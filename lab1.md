@@ -71,11 +71,19 @@
 
   2.2 .- Instalación por grupos de paquetes.
   
-      [root@gold72 ~]# yum install @virtualization-hypervisor @virtualization-client @virtualization-platform  @virtualization-tools -y
+    [root@gold72 ~]# yum install @virtualization-hypervisor @virtualization-client @virtualization-platform  @virtualization-tools -y
           Complementos cargados:product-id, search-disabled-repos, subscription-manager
           Advertencia: Grupo virtualization-hypervisor no tiene ningún paquete que instalar.
           Resolviendo dependencias
           --> Ejecutando prueba de transacción
+          
+            taglib.x86_64 0:1.8-7.20130218git.el7                                 totem-pl-parser.x86_64 0:3.10.5-1.el7
+            tracker.x86_64 0:1.2.6-3.el7                                          upower.x86_64 0:0.99.2-1.el7
+            urw-fonts.noarch 0:2.4-16.el7                                         usbmuxd.x86_64 0:1.0.8-11.el7
+            vte-profile.x86_64 0:0.38.3-2.el7                                     vte3.x86_64 0:0.36.4-1.el7
+            xml-common.noarch 0:0.6.3-39.el7                                      xorg-x11-font-utils.x86_64 1:7.5-20.el7
+            yum-utils.noarch 0:1.1.31-34.el7                                     
+            ¡Listo!
 
   3.- Por defecto, este demonio se marca el inicio automático en cada arranque. Compruebe con el siguiente comando:
 
